@@ -17,6 +17,8 @@
 使用这个按钮时，Cloudflare 会引导用户复制仓库、配置 Worker 名称并直接部署到自己的账号下。
 
 ## 功能
+其原理是通过url编码modelid、原始地址、思考等级，但是api密钥不在其中(而是透明转发)
+这其实就是一个从url读取上游模型信息的中间层，非常轻量，0存储
 
 - `GET /` 返回一个中文表单页
 - `POST /:encodedProvider/:encodedModel/:reasoningToken/v1/chat/completions` 代理 OpenAI 风格请求
